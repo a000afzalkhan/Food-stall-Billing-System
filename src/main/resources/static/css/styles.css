@@ -1,0 +1,197 @@
+:root {
+  --app-bg: #f5f4ef;
+  --app-ink: #1d2528;
+  --app-muted: #657275;
+  --app-green: #0f8b6f;
+  --app-dark: #183236;
+  --app-warm: #f2a541;
+  --app-line: #dde2df;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-ink);
+}
+
+.app-navbar {
+  background: var(--app-dark);
+}
+
+.app-navbar .navbar-brand {
+  color: #fff;
+  font-weight: 800;
+}
+
+.eyebrow {
+  color: var(--app-warm);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.food-card,
+.summary-panel,
+.panel,
+.stat-card,
+.bill-paper,
+.login-card {
+  background: #fff;
+  border: 1px solid var(--app-line);
+  border-radius: 8px;
+  box-shadow: 0 16px 38px rgba(22, 34, 36, 0.1);
+}
+
+.food-card {
+  padding: 18px;
+}
+
+.price {
+  color: var(--app-green);
+  font-size: 1.2rem;
+}
+
+.stock {
+  color: var(--app-muted);
+  font-size: 0.92rem;
+}
+
+.quantity-control {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 40px 1fr 40px;
+}
+
+.qty-btn {
+  background: #eef7f4;
+  border: 1px solid #cde2dc;
+  border-radius: 7px;
+  color: var(--app-green);
+  font-weight: 900;
+  min-height: 40px;
+}
+
+.qty-input {
+  border: 1px solid var(--app-line);
+  border-radius: 7px;
+  font-weight: 800;
+  min-width: 0;
+  text-align: center;
+}
+
+.summary-panel {
+  padding: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.bill-rows {
+  border-block: 1px solid var(--app-line);
+  margin: 16px 0;
+  max-height: 280px;
+  overflow: auto;
+  padding: 10px 0;
+}
+
+.bill-rows.empty {
+  color: var(--app-muted);
+  text-align: center;
+}
+
+.bill-row,
+.total-line,
+.bill-totals div {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.bill-row {
+  border-bottom: 1px dashed var(--app-line);
+  padding: 8px 0;
+}
+
+.total-line,
+.bill-totals div {
+  padding: 8px 0;
+}
+
+.grand {
+  border-top: 1px solid var(--app-line);
+  font-size: 1.15rem;
+}
+
+.panel,
+.stat-card,
+.bill-paper {
+  padding: 20px;
+}
+
+.stat-card {
+  display: grid;
+  gap: 8px;
+}
+
+.stat-card span {
+  color: var(--app-muted);
+}
+
+.stat-card strong {
+  font-size: 1.6rem;
+}
+
+.admin-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(180px, 1.4fr) minmax(110px, 0.8fr) minmax(110px, 0.8fr) minmax(320px, 1.6fr);
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.login-body {
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.login-card {
+  margin: 0 auto;
+  max-width: 430px;
+  padding: 24px;
+  width: 100%;
+}
+
+.bill-paper {
+  max-width: 760px;
+}
+
+@media (max-width: 992px) {
+  .summary-panel {
+    position: static;
+  }
+
+  .admin-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .navbar,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .bill-paper {
+    border: 0;
+    box-shadow: none;
+  }
+}
